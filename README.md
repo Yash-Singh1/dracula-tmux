@@ -15,7 +15,9 @@ Configuration and options can be found at [draculatheme.com/tmux](https://dracul
 For padding with bottom status bar, add the following to your `.zshrc` or shell config:
 
 ```shell
-tmux set-option -g @dracula-cols $(tput cols)
+if [ -z "$(tmux show-option -gqv @dracula-cols)" ]; then
+  tmux set-option -g @dracula-cols $(tput cols)
+fi
 ```
 
 And the following to your `.tmux.conf`:
