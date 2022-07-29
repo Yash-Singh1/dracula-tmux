@@ -210,7 +210,7 @@ main()
   tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=${gray}] #I #W${flags}"
   tmux set-window-option -g window-status-activity-style "bold"
   tmux set-window-option -g window-status-bell-style "bold"
-  if [ "$(get_tmux_option "@dracula-padding-bg" ";;")" != ";;" ]; then
+  if [ "$(get_tmux_option "@dracula-padding-bg" ";;")" != ";;" ] && [ "$(get_tmux_option "status" "1")" != "2" ]; then
     local status_format_0_default
     status_format_0_default="$(tmux show-option -gqv "status-format[0]")"
     tmux set-option -g status 2
