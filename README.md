@@ -12,6 +12,18 @@ All instructions can be found at [draculatheme.com/tmux](https://draculatheme.co
 
 Configuration and options can be found at [draculatheme.com/tmux](https://draculatheme.com/tmux).
 
+For padding with bottom status bar, add the following to your `.zshrc` or shell config:
+
+```shell
+tmux set-option -g @dracula-cols $(tput cols)
+```
+
+And the following to your `.tmux.conf`:
+
+```shell
+set -g @dracula-padding-bg "{your terminal bg here}"
+```
+
 ## Features
 
 - Support for powerline
@@ -29,11 +41,12 @@ Configuration and options can be found at [draculatheme.com/tmux](https://dracul
 - When prefix is enabled smiley face turns from green to yellow
 - When charging, 'AC' is displayed
 - If forecast information is available, a ☀, ☁, ☂, or ❄ unicode character corresponding with the forecast is displayed alongside the temperature
+- Padding between panes and bottom status bar
 
 ## Compatibility
 
 Compatible with macOS and Linux. Tested on tmux 3.1b
-FreeBSD compatibility is in development
+FreeBSD and Windows compatibility is in development
 
 ## Team
 

@@ -210,6 +210,15 @@ main()
   tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=${gray}] #I #W${flags}"
   tmux set-window-option -g window-status-activity-style "bold"
   tmux set-window-option -g window-status-bell-style "bold"
+  if [ "$(get_tmux_option "@dracula-padding-bg" ";;")" != ";;" ]; then
+    local status_format_0_default
+    status_format_0_default="$(tmux show-option -gqv "status-format[0]")"
+    tmux set-option -g status 2
+    tmux set-option -g status-format[1] "${status_format_0_default}"
+    local padding_bg
+    padding_bg=$(get_tmux_option "@dracula-padding-bg" "default")
+    tmux set-option -g status-format[0] "#[bg=${padding_bg}]#($current_dir/fill_line.sh)"
+  fi
 }
 
 # run main function
