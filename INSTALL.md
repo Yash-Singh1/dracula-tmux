@@ -128,6 +128,14 @@ set -g @dracula-cpu-display-load true
 CPU usage percentage (default) - in percentage (output: %)
 Load average – is the average system load calculated over a given period of time of 1, 5 and 15 minutes (output: x.x x.x x.x)
 
+#### battery options
+
+Customize label
+
+```bash
+set -g @dracula-battery-label "Battery"
+```
+
 #### gpu-usage options
 
 Customize label
@@ -207,3 +215,14 @@ Switch from default fahrenheit to celsius
 set -g @dracula-show-fahrenheit false
 ```
 
+Set your location manually
+
+```bash
+set -g @dracula-fixed-location "Some City"
+```
+
+Hide your location
+
+```bash
+set -g @dracula-show-location false
+```
