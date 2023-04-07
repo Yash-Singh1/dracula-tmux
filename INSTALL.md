@@ -128,6 +128,12 @@ set -g @dracula-cpu-display-load true
 CPU usage percentage (default) - in percentage (output: %)
 Load average – is the average system load calculated over a given period of time of 1, 5 and 15 minutes (output: x.x x.x x.x)
 
+Override CPU Cores number (workaround when CPU cores queries don't work):
+
+```bash
+set -g @dracula-cpu-cores "12"
+```
+
 #### battery options
 
 Customize label

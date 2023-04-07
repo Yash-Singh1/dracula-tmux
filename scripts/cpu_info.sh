@@ -15,7 +15,7 @@ get_percent()
 
     Darwin)
       cpuvalue=$(ps -A -o %cpu | awk -F. '{s+=$1} END {print s}')
-      cpucores=$(sysctl -n hw.logicalcpu)
+      cpucores=$(get_tmux_option "@dracula-cpu-cores" `sysctl -n hw.logicalcpu`)
       cpuusage=$(( cpuvalue / cpucores ))
       percent="$cpuusage%"
       normalize_percent_len $percent
